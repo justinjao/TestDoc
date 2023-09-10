@@ -21,7 +21,7 @@ In brief, the proposed workflow works by pulling pre-built images of cBioPortal 
 
 ### Initial Setup
 
-[image](/Intial_Setup.drawio.svg)
+![image](/Intial_Setup.drawio.svg)
 
 The [`cbioportal-docker-compose`](https://github.com/cBioPortal/cbioportal-docker-compose) repository contains the files necessary to build a fully running instance of `cbioportal`. However, to get this to run, and to allow Okteto to access this in their `Deploy Preview` action, a 
 
