@@ -42,3 +42,10 @@ Following this setup, subsequent PRs should correctly trigger a staging environm
 
 
 # Maintenance
+ 
+ run preview_init.sh
+
+
+ The namespace of the directory is important, as this is how the `okteto build` command determines what namespace to push the service to (i.e. if the directory is called `cbioportal-docker-compose`, it would push to `okteto.dev/cbioportal-docker-compose-cbioportal:okteto-with-volume-mounts`). 
+ 
+ So while it might not make much sense to have a directory named `cbioportal-docker-compose` in the datahub repository, it was crucial to keep it consistent. The directory could have been changed, but the thinking here was that this would be easiest for maintenance, as rebuilding of the image via the init script could do a simple clean clone without having to do any other change.
