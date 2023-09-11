@@ -29,10 +29,12 @@ Automating this process presents a substantial quality-of-life improvement for m
 I primarily spent the first few months familiarizing and re-acquainting myself with the technology necessary for the project, (`docker-compose`, GitHub Actions, etc.). I also explored the cBioPortal ecosystem  (`datahub`, `cbioportal-docker-compose`, `cbioportal`, and `cbioportal-frontend` repositories), and running them to understand the applications I would be deploying.
 
 **End June to Mid July**
+
 I spent much of this phase discussing potential solutions with my mentors for creating our desired workflow, and what the final architecture was that we wanted to arrive at. As part of this phase, I spent time exploring potential solutions such as utilizing Terraform and AWS infrastructure, as well as Okteto, to deploy our preview environment, deploying test applications to see Proof of Concepts, before ultimately settling on Okteto due to its fully managed infrastructure and potential ease of use.
 
 
 **Mid July to Early September**
+
 This was the main coding phase of the project, where I actually implemented the code and tested the workflow. I first designed a workflow to prove that I could utilize Okteto to deploy an actual instance of cBioPortal. Afterwards, I modified the workflow to detect newly detected studies, and import multiple studies into the database. This phase involved numerous sessions of debugging, reaching out to mentors and others in the Okteto Community.
 
 Finally, I produced documentation detailing the proposed workflow solution I came up with.
@@ -80,5 +82,7 @@ One of the key frustrations I had with this project was working with a tool (Okt
 
 ### Close Feedback Loops Faster
 This is a lesson I've been taught before, but I feel that I really experienced the value of this throughout the project, both on a technical basis - i.e. learning to break issues down into simpler debugging steps, or PoC examples, as well as on a personal level, i.e. reaching out earlier to my mentors, as well as others in the Okteto community. There came several points where I felt like I had to figure out everything on my own because of how long I was taking to solve things, but ultimately what helped me solve things the fastest was being able to get feedback on my progress/approach, so that I could pivot if needed.
+
+-----
 
 Overall, I'm really glad I got to work on this project over the summer, as I learned a lot about things I thought I already knew. And of course, the chance to contribute to cancer research again, and to work on a project in life sciences again (having come from a life science background) was an opportunity that speaks close to my heart, and is one that I appreciated greatly.
