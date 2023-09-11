@@ -16,7 +16,7 @@ The following document outlines each of the steps of the workflow, and provides 
 
 ### Initial Setup
 
-![image](./Intial_Setup.svg)
+![image](images/Intial_Setup.svg)
 
 The [`cbioportal-docker-compose`](https://github.com/cBioPortal/cbioportal-docker-compose) repository contains the files necessary to build a fully running instance of `cbioportal`. However, to get this to run, and to allow Okteto to access this in their `Deploy Preview` action, certain configuration files (such as the `portal.properties` document), and data to seed the SQL database, must be present.
 
@@ -32,7 +32,7 @@ For a more detailed breakdown of the steps necessary here, as well as other prer
 
 In brief, the proposed workflow works by pulling the previously described pre-built images of cBioPortal (with the configuration files added) and the cBioPortal SQL database (with the database files for seeding already added as well). These images are used to launch a container with the new studies imported as well, and this container is re-built to the same namespace registry. The `Deploy Preview` action by Okteto then pulls this image and uses it to deploy the preview environment. Upon which, a `metaImport.py` script can be run to import the study into the running application instance.
 
-![Preview](./Preview2.svg)
+![Preview](images/Preview2.svg)
 
 ### Identify and Get New Files (2)
 The datahub repo is very large, and most files are stored using [Git LFS](https://git-lfs.com/), which by default doesn't store the actual file content in the repository (rather, they are references to the data, which is stored elsewhere). However, when importing an actual study, we need the actual file data. As a result, it is not possible to check out the entire repository's files during a GitHub Action workflow (the runner runs out of space). We therefore need to know which exact studies are the newly added ones that we want to preview, and checkout only these specific files from the repository. This also has the added benefit of making the review process for previewing the studies easier, as only new studies are imported into the staging instance.
